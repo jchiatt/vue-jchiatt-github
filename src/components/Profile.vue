@@ -11,7 +11,7 @@
 <script>
 export default {
   name: 'profile',
-  props: ['profileData'],
+  props: ['profileData', 'isHireable'],
 };
 </script>
 

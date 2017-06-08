@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <profile v-bind:profileData="profileData"></profile>
+    <profile v-bind:profileData="profileData" v-bind:isHireable="isHireable"></profile>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
     axios.get('https://api.github.com/users/jchiatt')
       .then((response) => {
         this.profileData = response.data;
-        if (this.profileData.hireable === true) {
+        if (response.data.hireable === true) {
           this.isHireable = true;
           console.log(this.isHireable);
         }
